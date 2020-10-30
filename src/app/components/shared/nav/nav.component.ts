@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var name:any;
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',

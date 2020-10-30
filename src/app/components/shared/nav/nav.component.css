@@ -1,0 +1,10 @@
+body{
+    margin-top:60px;
+}
+.form-control
+{
+    margin-left: 20px;
+}
+#navbar{
+    background-color: rgba(233, 215, 215, 0.514);
+}
