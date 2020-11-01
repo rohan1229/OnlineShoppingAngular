@@ -1,87 +1,62 @@
-<!-- Card -->
-<div class="">
-
-    <div class="pt-4 pb-3">
-  
-      <h5 class="text-center mt-1 mb-4">Sign Up</h5>
-  
-      <form action="#!">
-  
-        <div class="form-row">
-          <div class="col">
-            <div class="md-form md-outline mt-0">
-              <input type="text" id="materialRegisterFormFirstName" class="form-control">
-              <label for="materialRegisterFormFirstName">First name</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/login.css"> -->
+</head>
+<body>
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <!-- <img src="assets/images/login.jpg" alt="login" class="login-card-img"> -->
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="login-card-img" style="background-color:rgba(172, 168, 168, 0.43);">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <!-- <img src="assets/images/logo.svg" alt="logo" class="logo"> -->
+              </div>
+              <p class="login-card-description">Create an account</p>
+              <form action="#!">
+                <div class="form-group">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address">
+                  </div>
+                  <div class="form-group">
+                    <label for="mobile" class="sr-only">Mobile</label>
+                    <input type="number" name="mobile" id="mobile" class="form-control" placeholder="Mobile Number">
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                  </div>
+                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Register">
+                </form>
+                <p class="login-card-footer-text">Already Registered?<a href="/login" class="text-reset">Login here</a></p>
+                <nav class="login-card-footer-nav">
+                  <a href="#!">Terms of use.</a>
+                  <a href="#!">Privacy policy</a>
+                </nav>
             </div>
           </div>
-          <div class="col">
-            <div class="md-form md-outline mt-0">
-              <input type="email" id="materialRegisterFormLastName" class="form-control">
-              <label for="materialRegisterFormLastName">Last name</label>
-            </div>
-          </div>
         </div>
-  
-        <div class="md-form md-outline mt-0">
-          <input type="email" id="defaultForm-email2" class="form-control">
-          <label data-error="wrong" data-success="right" for="defaultForm-email2">Your email</label>
-        </div>
-        <div class="md-form md-outline mt-0">
-          <input type="password" id="defaultForm-pass2" class="form-control">
-          <label data-error="wrong" data-success="right" for="defaultForm-pass2">Your password</label>
-          <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-            At least 8 characters and 1 digit
-          </small>
-        </div>
-  
-        <div class="md-form md-outline">
-          <input type="number" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
-          <label for="materialRegisterFormPhone">Phone number</label>
-          <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-3">
-            Optional - for two step authentication
-          </small>
-        </div>
-  
-      </form>
-  
-      <div class="text-center pb-2">
-  
-        <div class="form-check pl-0 mb-3">
-          <input type="checkbox" class="form-check-input filled-in" id="new1">
-          <label class="form-check-label small text-uppercase card-link-secondary" for="new1">Subscribe to our newsletter</label>
-        </div>
-  
       </div>
-  
-      <div class="text-center mb-2">
-  
-        <button type="submit" class="btn btn-primary mb-4">Sign Up</button>
-  
-        <p>or sign up with:</p>
-  
-        <a type="button" class="btn-floating btn-fb btn-sm mr-1">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a type="button" class="btn-floating btn-tw btn-sm mr-1">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a type="button" class="btn-floating btn-li btn-sm mr-1">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a type="button" class="btn-floating btn-git btn-sm">
-          <i class="fab fa-github"></i>
-        </a>
-  
-        <hr class="mt-4">
-  
-        <p>By clicking
-          <em>Sign up</em> you agree to our
-          <a href="" target="_blank">terms of service</a>
-        </p>
-  
-      </div>
-  
     </div>
-  
-  </div>
-  <!-- Card -->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
