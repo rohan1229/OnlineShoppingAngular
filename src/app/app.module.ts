@@ -13,6 +13,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { OrderconfirmationComponent } from './components/orderconfirmation/orderconfirmation.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ProductdescriptionComponent } from './components/productdescription/productdescription.component';
+import { RetailerRegisterComponent } from './components/retailer-register/retailer-register.component';
+import { RetailerLoginComponent } from './components/retailer-login/retailer-login.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -25,6 +27,8 @@ const appRoutes:Routes=[
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'productdescription',component:ProductdescriptionComponent},
   {path:'cart',component:CartComponent},
+  {path:'retailer-register',component:RetailerRegisterComponent},
+  {path:'retailer-login',component:RetailerLoginComponent}
 ]
 
 @NgModule({
@@ -39,7 +43,9 @@ const appRoutes:Routes=[
     CartComponent,
     OrderconfirmationComponent,
     ResetpasswordComponent,
-    ProductdescriptionComponent
+    ProductdescriptionComponent,
+    RetailerRegisterComponent,
+    RetailerLoginComponent
   ],
   imports: [
     BrowserModule,
