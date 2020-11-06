@@ -13,11 +13,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { OrderconfirmationComponent } from './components/orderconfirmation/orderconfirmation.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ProductdescriptionComponent } from './components/productdescription/productdescription.component';
+import { LoginService } from './login.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginCheckComponent } from './components/login-check/login-check.component';
+import { UserService } from "./user.service";
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'login-user',component:LoginComponent},
+  {path:'register-user',component:RegisterComponent},
   {path:'products',component:ProductInfoComponent},
   {path:'offers',component:OffersComponent},
   {path:'checkout',component:CheckoutComponent},
@@ -25,6 +31,8 @@ const appRoutes:Routes=[
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'productdescription',component:ProductdescriptionComponent},
   {path:'cart',component:CartComponent},
+  {path:'login-check',component:LoginCheckComponent},
+  {path:'thankyou',component:ThankyouComponent}
 ]
 
 @NgModule({
@@ -39,14 +47,19 @@ const appRoutes:Routes=[
     CartComponent,
     OrderconfirmationComponent,
     ResetpasswordComponent,
-    ProductdescriptionComponent
+    ProductdescriptionComponent,
+    LoginCheckComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [LoginService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
