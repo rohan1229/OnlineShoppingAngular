@@ -77,6 +77,12 @@ body {
 	.login-card-footer-nav a {
 	  font-size: 14px;
 	  color: #919aa3; }
+	.form-validation {
+		position: absolute;
+		margin-left: 350px;
+		padding-top: 8px;
+		font-size: 15px;
+	}
   
   /*# sourceMappingURL=login.css.map */
   

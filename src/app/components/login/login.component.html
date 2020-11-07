@@ -24,16 +24,22 @@
                 <!-- <img src="assets/images/logo.svg" alt="logo" class="logo"> -->
               </div>
               <p class="login-card-description">Sign into your account</p>
-              <form (ngSubmit)="loginUser()">
+              <form #loginForm="ngForm" (ngSubmit)="loginUser()">
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address" [(ngModel)]=login.email>
+                    <ng-container *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
+                      <span *ngIf="useremail.errors.pattern" class="form-validation" style="color: red;">*Enter a valid email</span>
+                    </ng-container>
+                    <input type="email" #useremail="ngModel" name="email" id="email" class="form-control" placeholder="Email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]=login.email>
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********" [(ngModel)]=login.password>
+                    <ng-container *ngIf="password.invalid && (password.dirty || password.touched)">
+                      <span *ngIf="password.errors.pattern" class="form-validation" style="color: red;">*Enter a valid password</span>
+                    </ng-container>
+                    <input type="password" #password="ngModel" name="password" id="password" class="form-control" placeholder="***********" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]=login.password>
                   </div>
-                  <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit">Login</button>
+                  <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" [disabled]="!loginForm.form.valid">Login</button>
               </form>
               <a href="/resetpassword" class="forgot-password-link">Forgot password?</a>
               <p class="login-card-footer-text">Don't have an account? <a href="/register" class="text-reset">Register here</a></p>
