@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginCheckComponent } from './components/login-check/login-check.component';
 import { UserService } from "./user.service";
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { RetailerLoginComponent } from './components/retailer-login/retailer-login.component';
+import { RetailerRegisterComponent } from "./components/retailer-register/retailer-register.component";
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -32,7 +36,11 @@ const appRoutes:Routes=[
   {path:'productdescription',component:ProductdescriptionComponent},
   {path:'cart',component:CartComponent},
   {path:'login-check',component:LoginCheckComponent},
-  {path:'thankyou',component:ThankyouComponent}
+  {path:'thankyou',component:ThankyouComponent},
+  {path:'retailer-login',component:RetailerLoginComponent},
+  {path:'retailer-register',component:RetailerRegisterComponent},
+  {path:'view-product',component:ViewProductComponent},
+  {path:'add-product',component:AddProductComponent}
 ]
 
 @NgModule({
@@ -49,7 +57,9 @@ const appRoutes:Routes=[
     ResetpasswordComponent,
     ProductdescriptionComponent,
     LoginCheckComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    AddProductComponent,
+    ViewProductComponent
   ],
   imports: [
     BrowserModule,
