@@ -25,24 +25,36 @@
                 <!-- <img src="assets/images/logo.svg" alt="logo" class="logo"> -->
               </div>
               <p class="login-card-description">Create an account</p>
-              <form (ngSubmit)="register()">
+              <form #registerForm="ngForm" (ngSubmit)="register()">
                 <div class="form-group">
                     <label for="name" class="sr-only">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name" [(ngModel)]=user.userName>
+                    <ng-container *ngIf="username.invalid && (username.dirty || username.touched)">
+                      <span *ngIf="username.errors.required" class="form-validation" style="color: red;">*Name is required</span>
+                    </ng-container>
+                    <input type="text" #username="ngModel" name="name" id="name" class="form-control" placeholder="Enter Your Name" required [(ngModel)]=user.userName>
                   </div>
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Email address" [(ngModel)]=user.userEmail>
+                    <ng-container *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)">
+                      <span *ngIf="useremail.errors.pattern" class="form-validation" style="color: red;">*Enter a valid email</span>
+                    </ng-container>
+                    <input type="email" #useremail="ngModel" name="email" id="email" class="form-control" placeholder="Email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [(ngModel)]=user.userEmail>
                   </div>
                   <div class="form-group">
                     <label for="mobile" class="sr-only">Mobile</label>
-                    <input type="number" name="mobile" id="mobile" class="form-control" placeholder="Mobile Number" [(ngModel)]=user.userMobile>
+                    <ng-container *ngIf="usermobile.invalid && (usermobile.dirty || usermobile.touched)">
+                      <span *ngIf="usermobile.errors.required" class="form-validation" style="color: red;">*Mobile no. is required</span>
+                    </ng-container>
+                    <input type="number" #usermobile="ngModel" name="mobile" id="mobile" class="form-control" placeholder="Mobile Number" required [(ngModel)]=user.userMobile>
                   </div>
                   <div class="form-group mb-4">
                     <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="***********" [(ngModel)]=user.userPassword>
+                    <ng-container *ngIf="userpassword.invalid && (userpassword.dirty || userpassword.touched)">
+                      <span *ngIf="userpassword.errors.pattern" class="form-validation" style="color: red;">*Enter a valid password</span>
+                    </ng-container>
+                    <input type="password" #userpassword="ngModel" name="password" id="password" class="form-control" placeholder="***********" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]=user.userPassword>
                   </div>
-                  <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit">Register</button>
+                  <button name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" [disabled]="!registerForm.form.valid">Register</button>
               </form>
               <p class="login-card-footer-text">Already Registered?<a href="/login" class="text-reset">Login here</a></p>
               <nav class="login-card-footer-nav">

@@ -14,7 +14,7 @@ import { OrderconfirmationComponent } from './components/orderconfirmation/order
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ProductdescriptionComponent } from './components/productdescription/productdescription.component';
 import { LoginService } from './login.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginCheckComponent } from './components/login-check/login-check.component';
 import { UserService } from "./user.service";
@@ -57,6 +57,7 @@ const appRoutes:Routes=[
     FormsModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [LoginService, UserService],
