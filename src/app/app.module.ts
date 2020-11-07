@@ -23,25 +23,9 @@ import { RetailerLoginComponent } from './components/retailer-login/retailer-log
 import { RetailerRegisterComponent } from "./components/retailer-register/retailer-register.component";
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
+import { RetailerRegisterService } from './retailer-register.service';
 
-const appRoutes:Routes=[
-  {path:'',component:HomeComponent},
-  {path:'login-user',component:LoginComponent},
-  {path:'register-user',component:RegisterComponent},
-  {path:'products',component:ProductInfoComponent},
-  {path:'offers',component:OffersComponent},
-  {path:'checkout',component:CheckoutComponent},
-  {path:'cart',component:CartComponent},
-  {path:'resetpassword',component:ResetpasswordComponent},
-  {path:'productdescription',component:ProductdescriptionComponent},
-  {path:'cart',component:CartComponent},
-  {path:'login-check',component:LoginCheckComponent},
-  {path:'thankyou',component:ThankyouComponent},
-  {path:'retailer-login',component:RetailerLoginComponent},
-  {path:'retailer-register',component:RetailerRegisterComponent},
-  {path:'view-product',component:ViewProductComponent},
-  {path:'add-product',component:AddProductComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -59,7 +43,8 @@ const appRoutes:Routes=[
     LoginCheckComponent,
     ThankyouComponent,
     AddProductComponent,
-    ViewProductComponent
+    ViewProductComponent,
+    RetailerRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -67,10 +52,9 @@ const appRoutes:Routes=[
     FormsModule,
     RouterModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule
   ],
-  providers: [LoginService, UserService],
+  providers: [LoginService, UserService, RetailerRegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

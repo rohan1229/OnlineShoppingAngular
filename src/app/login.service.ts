@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  login(login: Login) : Observable<LoginStatus>  {
+  login(login: Login) : Observable<LoginStatus> {
     let url = 'http://localhost:8080/login-user';
     return this.http.post<LoginStatus>(url, login);
   }

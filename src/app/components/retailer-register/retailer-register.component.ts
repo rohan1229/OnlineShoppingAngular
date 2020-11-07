@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RetailerRegisterService } from "../../retailer-register.service";
+import { Retailer } from "../../retailer";
 
 @Component({
   selector: 'app-retailer-register',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RetailerRegisterComponent implements OnInit {
 
-  constructor() { }
+  retailer = new Retailer();
 
-  ngOnInit(): void {
+  constructor(private retailerRegisterService:RetailerRegisterService, private router:Router) { }
+
+  ngOnInit() {
   }
 
+  register(){
+    this.retailerRegisterService.register(this.retailer).subscribe(data=>{
+      if(data.status=='SUCCESS'){
+        //alert(JSON.stringify(data));
+        this.router.navigate(['retailer-login']);
+      }
+      else{
+
+      }
+    })
+  }
 }
